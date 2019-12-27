@@ -3,6 +3,7 @@ Just another custom jobs plugin, written from nothing.
 
 See config in config.yml file and messages in messages.yml file.
 Plugin use Paper API for MC 1.14.4 (you can use spigot).
+See [wiki](https://github.com/SoKnight/Jobs/wiki) for more information.
 
 ## Features
 - Integration with WorldGuard: Create regions for job's workspace, manage WG flags and configure internal/external points for teleport (see below)
@@ -19,5 +20,3 @@ Plugin use Paper API for MC 1.14.4 (you can use spigot).
 - WorldGuard plugin + WorldEdit for him
 - PEconomy (my plugin, search in my repositories)
 - PlaceholdersAPI (soft-depend, if you want use placeholders from plugin)
-
-See [wiki](https://github.com/SoKnight/Jobs/wiki) for more information.
