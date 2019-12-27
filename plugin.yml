@@ -1,0 +1,39 @@
+name: Jobs
+main: ru.soknight.jobs.Jobs
+author: SoKnight
+version: 1.0.0
+api-version: 1.14
+depend: [WorldGuard, WorldEdit]
+commands:
+  jobs:
+    description: Main plugin command
+    usage: /jobs <args>
+permissions:
+  jobs.addtool:
+    default: op
+  jobs.done:
+    default: true
+  jobs.help:
+    default: true
+  jobs.join:
+    default: true
+  jobs.join.other:
+    default: op
+  jobs.leave:
+    default: true
+  jobs.leave.other:
+    default: op
+  jobs.info:
+    default: true
+  jobs.info.other:
+    default: op
+  jobs.list:
+    default: true
+  jobs.reload:
+    default: op
+  jobs.remtool:
+    default: op
+  jobs.start:
+    default: true
+  jobs.usetools:
+    default: op

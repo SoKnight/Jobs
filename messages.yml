@@ -1,0 +1,88 @@
+# Errors
+error-without-args: "&cНе указаны обязательные аргументы команды. Используйте '/jobs help' для помощи."
+error-invalid-syntax: "&cНеверное использование команды. Используйте '/jobs help' для помощи."
+error-command-not-found: "&cКоманда не найдена. Используйте '/jobs help' для помощи."
+error-only-for-players: "&cТолько игрок может использовать данную команду."
+error-no-permission: "&cНедостаточно прав."
+error-arg-is-not-int: "&cАргумент %arg% должен быть числом."
+error-player-not-found: "&cИгрок %nickname% не найден."
+error-job-not-found: "&cРабота '%job%' не существует."
+error-full-inventory: "&cВаш инвентарь заполнен!"
+
+# Joining
+join-failed-not-exist: "&cРабота '%job%' не существует."
+join-failed-already: "&cВы уже устроены на работу %job%."
+join-failed-max: "&cВы уже имеете максимально возможное кол-во работ."
+join-success: "&fВы устроились на работу &b%job%&f."
+join-other-success: "&fИгрок &b%player% &fустроен на работу &b%job%&f."
+join-other-failed-already: "&cИгрок %player% уже устроен на работу %job%."
+
+# Leaving
+leave-failed-not-exist: "&cРабота '%job%' не существует."
+leave-failed-not-joined: "&cВы не устроены на работу %job%."
+leave-success: "&fВы уволились с работы &b%job%&f."
+leave-other-success: "&fИгрок &b%player% &fуволен с работы &b%job%&f."
+leave-other-failed-not-joined: "&cИгрок %player% не устроен на работу %job%."
+
+# Blocks selection
+select-block-add-success: "&fБлок на &b%location% &fдобавлен для работы &b%job%&f."
+select-block-add-failed: "&cДанный блок уже привязан к работе %job%."
+select-block-remove-success: "&fБлок на &b%location% &fубран для работы &b%job%&f."
+select-block-remove-failed: "&cДанный блок не привязан к работе %job%."
+select-add-tool: "&fИнструмент добавления для работы &b%job% &fдобавлен в ваш инвентарь."
+select-remove-tool: "&fИнструмент удаления для работы &b%job% &fдобавлен в ваш инвентарь."
+
+# Workers list
+workers-header: "&f##      &7Рабочие      &f##"
+workers-body: "&f&l• &b%job% &f&l- &f%workers%"
+workers-footer: "&f##       &7-=*=-       &f##"
+
+# Info
+info-failed-not-joined: "&cВы не устроены на работу %job%."
+info-other-failed-not-joined: "&cИгрок %player% не устроен на работу %job%."
+info-header: "&f##      &7Информация о работе      &f##"
+info-name: " &fРабота: &b%name%"
+info-player: " &fРабочий: &b%nickname%"
+info-workers: " &fКол-во рабочих: &b%workers%"
+info-level: " &fУровень: &b%level% &7(%exp%/%needed%)"
+info-boost: " &fБонус добычи: &b%bonus%"
+info-footer: "&f##             &7-=*=-             &f##"
+
+# Work status
+work-done-failed: "&cСейчас вы нигде не работаете."
+work-doned: "&fВы покинули рабочую область работы &b%job%&f."
+work-start-failed-already: "&cВы уже находитесь в какой-то рабочей области. Используйте '/jobs done', чтобы покинуть её."
+work-start-failed-not-joined: "&cВы не устроены на работу %job%."
+work-started: "&fВы переместились в рабочую область, можете начинать работу."
+
+# Animals spawning
+spawn-success: "&fСущество &b%mob% &fпризвано."
+spawn-failed-wrong-mob: "&fНедопустимый тип моба. Список: &b[cow, chicken, pig, sheep, rabbit]&f."
+
+# Misc
+reload-success: "&fJobs перезагружен."
+salary-message: "&fПолучено %money%$"
+levelup-title: "&e&lLevel up!"
+levelup-message: "&fУровень повышен до %level%!"
+
+# Help
+help-header: '&f##          &7Помощь по Jobs          &f##'
+help-body: '&f&l• &b/jobs %cmd% &f&l- &f%desc%'
+help-footer: '&f##              &7-=**=-              &f##'
+help-descriptions:
+  addtool: 'Инструмент добавления'
+  done: 'Покинуть рабочую область'
+  help: 'Показать эту страницу'
+  join: 'Устроиться на работу'
+  join-other: 'Устроить игрока на работу'
+  leave: 'Уволиться с работы'
+  leave-other: 'Уволить игрока с работы'
+  info: 'Информация о работе'
+  info-other: 'Информация о работе игрока'
+  list: 'Показать список работ'
+  reload: 'Перезагрузить плагин'
+  remtool: 'Инструмент удаления'
+  start: 'Войти на рабочую область'
+help-nodes:
+  job: '<работа>'
+  target: '(цель)'

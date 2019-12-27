@@ -1,0 +1,193 @@
+#  +-------------------------------------------------------------------------------+
+#  |                          _____    ___    _____   _____                        |
+#  |                         |___  |  / _ \  |  _  | /  ___\                       |
+#  |                             | | | | | | | |_| | | |___                        |
+#  |                          _  | | | | | | |  _ \  |___  |                       |
+#  |                         | \_/ | | |_| | | |_| |  ___| |                       |
+#  |                          \___/   \___/  |_____| \_____/                       |
+#  |                                                                               |
+#  |                                                                               |
+#  |   Author: SoKnight                                           Version: 1.0.0   |
+#  |                                                                               |
+#  +-------------------------------------------------------------------------------+
+#   
+# Useful resources:
+# - Available material-types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#
+# Available placeholders:
+# - %jobs_worknow% - Player work now or not
+# - %jobs_JOB_joined% - Joined or not player to target job (true/false)
+# - %jobs_JOB_worknow% - Player work now at target job or not (true/false)
+# - %jobs_JOB_level% - Job level
+# - %jobs_JOB_progress% - Job level progress
+# - %jobs_JOB_needed% - Job exp needed for next level
+# - %jobs_JOB_basesalary% - Base salary for job
+# - %jobs_JOB_permboost% - Boost from permissions
+#
+# Configuration of database
+database:
+  # Database types: [mysql, sqlite]
+  type: sqlite
+  # MySQL configuration
+  host: localhost
+  port: 3306
+  name: jobs
+  user: admin
+  password: jobs
+  # SQLite configuration
+  file: jobs.db
+# Configuration of messages
+messages:
+  # Should plugin set special prefix after all messages
+  use-prefix: false
+  # Prefix for all messages
+  # Tip - there is no space between the prefix and the message
+  prefix: "&6[Jobs] &r"
+  # Should plugin sent salary messages to player's actionbar
+  salary-actionbar: true
+  # Should plugin sent levelup messages to player's title
+  titled-levelup: true
+# Misc configuration
+misc:
+  # Max count of available jobs per player
+  max-jobs: 2
+# Workspaces
+workspaces:
+  # Workspaces world
+  world: world
+  # Worldguard regions configuration
+  regions:
+    # Region name for miner's workspace
+    miner: "miner_ws"
+    woodcutter: "woodcutter_ws"
+    hunter: "hunter_ws"
+    fisherman: "fisherman_ws"
+    farmer: "farmer_ws"
+  # Centry player's destination location
+  centry: true
+  # Workspaces teleport points
+  points:
+    miner:
+      # Point to move when player use '/jobs start <job>'
+      internal: "world; 0; 70; 0"
+      # Point to move when player use '/jobs done'
+      external: "world; 5; 70; 5"
+    woodcutter:
+      internal: "world; 0; 70; 0"
+      external: "world; 5; 70; 5"
+    hunter:
+      internal: "world; 0; 70; 0"
+      external: "world; 5; 70; 5"
+    fisherman:
+      internal: "world; 0; 70; 0"
+      external: "world; 5; 70; 5"
+    farmer:
+      internal: "world; 0; 70; 0"
+      external: "world; 5; 70; 5"
+# Jobs levels
+levels:
+  # Next level needed exp multiplier
+  exp-multiplier: 1.7
+  # Exp for first level
+  first-level-exp: 30
+  # Max levels
+  max-levels:
+    miner: 30
+    woodcutter: 30
+    hunter: 30
+    fisherman: 30
+    farmer: 30
+# Base salaries for jobs (money per item)
+# Salary formule: base + (per-level * (current level - 1))
+salaries:
+  miner:
+    base: 10
+    per-level: 0.5
+  woodcutter:
+    base: 9
+    per-level: 0.5
+  hunter:
+    base: 9
+    per-level: 0.5
+  fisherman:
+    base: 8
+    per-level: 0.5
+  farmer:
+    base: 9
+    per-level: 0.5
+# Jobs tasks
+tasks:
+  # Time for entities respawn (in seconds)
+  hunter: 10
+  # Time for blocks regeneration (in seconds)
+  miner: 5
+  woodcutter: 5
+  farmer: 5
+# Admin tools for blocks selection
+tools:
+  # Should enable this feature
+  enabled: true
+  # Adding tool
+  add-tool:
+    name: "&bИнструмент добавления"
+    material: stick
+    enchanted: true
+    lore:
+    - ' '
+    - ' &fПривязан к работе: &b%job% '
+    - ' '
+    - ' &fКликните ПКМ по блоку, чтобы '
+    - ' &fдобавить его в список работы '
+    - ' '
+  # Removing tool
+  remove-tool:
+    name: "&bИнструмент удаления"
+    material: stick
+    enchanted: true
+    lore:
+    - ' '
+    - ' &fПривязан к работе: &b%job% '
+    - ' '
+    - ' &fКликните ПКМ по блоку, чтобы '
+    - ' &fудалить его из списка работы '
+    - ' '
+# Salary boosts
+boosts:
+  # Boost salary by group
+  permissions:
+    'group.businessman': 0.05
+    'group.millionaire': 0.1
+    'group.billionaire': 0.15
+    'group.president': 0.2
+  # Boost salary by resource
+  materials:
+    miner:
+      cobblestone: 0.1
+      coal_ore: 0.3
+      iron_ore: 0.5
+      gold_ore: 0.8
+      diamond_ore: 1.2
+      emerald_ore: 1.3
+    woodcutter:
+      oak_log: 0.2
+      birch_log: 0.2
+      spruce_log: 0.1
+      jungle_log: 0.1
+      dark_oak_log: 0.2
+      acacia_log: 0.2
+    hunter:
+      beef: 0.3
+      chicken: 0.1
+      mutton: 0.2
+      porkchop: 0.25
+      rabbit: 0.15
+    fisherman:
+      cod: 0.1
+      salmon: 0.2
+      pufferfish: 0.4
+      tropical_fish: 1.0
+    farmer:
+      wheat: 0.2
+      carrots: 0.15
+      potatoes: 0.2
+      beetroots: 0.2
