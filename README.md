@@ -19,3 +19,5 @@ Plugin use Paper API for MC 1.14.4 (you can use spigot).
 - WorldGuard plugin + WorldEdit for him
 - PEconomy (my plugin, search in my repositories)
 - PlaceholdersAPI (soft-depend, if you want use placeholders from plugin)
+
+See [wiki](https://github.com/SoKnight/Jobs/wiki) for more information.
