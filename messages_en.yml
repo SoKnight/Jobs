@@ -1,0 +1,84 @@
+# Errors
+error-without-args: "&cRequired arguments are not specified. Use '/peco help' for help."
+error-invalid-syntax: "&cWrong command syntax. Use '/peco help' for help."
+error-command-not-found: "&cUnknown command. Use '/peco help' for help."
+error-only-for-players: "&cThis command only for players."
+error-no-permission: "&cNot enough permissions."
+error-arg-is-not-int: "&cArgument %arg% must be integer."
+error-player-not-found: "&cPlayer %nickname% not found."
+error-job-not-found: "&cUnknown job '%job%'. Specify 'miner', 'woodcutter', 'hunter', 'fisherman' or 'farmer'."
+error-full-inventory: "&cYour inventory is full!"
+
+# Joining
+join-failed-not-exist: "&cJob '%job%' is not exist."
+join-failed-already: "&cYou already joined to %job%."
+join-failed-max: "&cYou already joined to max jobs count."
+join-success: "&fSuccessfully joined to &b%job%&f."
+join-other-success: "&fPlayer &b%player% &fjoined to &b%job%&f."
+join-other-failed-already: "&cPlayer %player% already joined to %job%."
+
+# Leaving
+leave-failed-not-exist: "&cJob '%job%' is not exist."
+leave-failed-not-joined: "&cYou is not joined to %job%."
+leave-success: "&fYou leave from &b%job%&f."
+leave-other-success: "&fPlayer &b%player% &fdismissed from &b%job%&f."
+leave-other-failed-not-joined: "&cPlayer %player% is not joined to %job%."
+
+# Blocks selection
+select-block-add-success: "&fBlock at &b%location% &flinked with &b%job%&f."
+select-block-add-failed: "&cThis block already linked with %job%."
+select-block-remove-success: "&fBlock at &b%location% &funlinked from &b%job%&f."
+select-block-remove-failed: "&cThis block is not linked with %job%."
+select-add-tool: "&fAdding tool for &b%job% &fadded to your inventory."
+select-remove-tool: "&fRemoving tool for &b%job% &fadded to your inventory."
+
+# Workers list
+workers-header: "&f##      &7Workers      &f##"
+workers-body: "&f&l• &b%job% &f&l- &f%workers%"
+workers-footer: "&f##       &7-=*=-       &f##"
+
+# Info
+info-failed-not-joined: "&cYou is not joined to %job%."
+info-other-failed-not-joined: "&cPlayer %player% is not joined to %job%."
+info-header: "&f##      &7Your job status      &f##"
+info-name: " &fJob: &b%name%"
+info-player: " &fWorker: &b%nickname%"
+info-workers: " &fWorkers count: &b%workers%"
+info-level: " &fLevel: &b%level% &7(%exp%/%needed%)"
+info-boost: " &fBonus: &b%bonus%"
+info-footer: "&f##           &7-=*=-           &f##"
+
+# Work status
+work-done-failed: "&cYou don't work anywhere right now."
+work-doned: "&fYou leave workspace of job &b%job%&f."
+work-start-failed-already: "&cYou already joined to any workspace. Use '/jobs done' to leave."
+work-start-failed-not-joined: "&cYou is not joined to %job%."
+work-started: "&fYou join to workspace. Now you can start your work."
+
+# Misc
+reload-success: "&fJobs reloaded."
+salary-message: "&fReceived %money%$"
+levelup-title: "&e&lLevel up!"
+levelup-message: "&fYour level up to %level%!"
+
+# Help
+help-header: '&f##          &7Help for Jobs          &f##'
+help-body: '&f&l• &b/jobs %cmd% &f&l- &f%desc%'
+help-footer: '&f##              &7-=*=-              &f##'
+help-descriptions:
+  addtool: 'Get adding tool'
+  done: 'Leave from workspace'
+  help: 'View this page'
+  join: 'Join to any job'
+  join-other: 'Join player to any job'
+  leave: 'Leave from job'
+  leave-other: 'Dismiss player from job'
+  info: 'View info about job'
+  info-other: "View player's info about job"
+  list: 'View jobs list with workers count'
+  reload: 'Reload configurations'
+  remtool: 'Get removing tool'
+  start: 'Join to workspace and start work'
+help-nodes:
+  job: '<job>'
+  target: '(target)'

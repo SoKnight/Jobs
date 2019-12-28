@@ -5,12 +5,12 @@ import java.util.List;
 
 public enum JobType {
 
-	JOBLESS("Безработный"),
-	MINER("Шахтёр"), 
-	WOODCUTTER("Лесоруб"), 
-	HUNTER("Охотник"), 
-	FISHERMAN("Рыбак"), 
-	FARMER("Фермер");
+	JOBLESS("Jobless"),
+	MINER("Miner"), 
+	WOODCUTTER("Woodcutter"), 
+	HUNTER("Hunter"), 
+	FISHERMAN("Fisherman"), 
+	FARMER("Farmer");
 	
 	private String name;
 	

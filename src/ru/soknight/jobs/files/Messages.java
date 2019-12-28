@@ -28,10 +28,10 @@ public class Messages {
 		Jobs instance = Jobs.getInstance();
 		File datafolder = instance.getDataFolder();
 		if(!datafolder.isDirectory()) datafolder.mkdirs();
-		File file = new File(instance.getDataFolder(), "messages.yml");
+		File file = new File(instance.getDataFolder(), "messages_en.yml");
 		if(!file.exists()) {
 			try {
-				Files.copy(instance.getResource("messages.yml"), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				Files.copy(instance.getResource("messages_en.yml"), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				Logger.info("Generated new messages file.");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -44,7 +44,7 @@ public class Messages {
 	
 	public static String getMessage(String section) {
 		if(!keys.contains(section)) {
-			Logger.error("Couldn't load message from messages.yml: " + section);
+			Logger.error("Couldn't load message from messages_en.yml: " + section);
 			return "Whoops! Message not found :(";
 		}
 		String output = config.getString(section).replace("&", "\u00A7");
@@ -54,7 +54,7 @@ public class Messages {
 	
 	public static String getRawMessage(String section) {
 		if(!keys.contains(section)) {
-			Logger.error("Couldn't load message from messages.yml: " + section);
+			Logger.error("Couldn't load message from messages_en.yml: " + section);
 			return "Whoops! Message not found :(";
 		}
 		String output = config.getString(section).replace("&", "\u00A7");
