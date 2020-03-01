@@ -1,0 +1,42 @@
+# Example Fisherman job configuration by SoKnight
+#
+# See available materials here in 'enum constants summary' header:
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#
+# See additional info about every option in Miner configuration (miner.yml)
+
+# General and world
+name: 'Fisherman'
+world: 'world'
+workspace: 'fisherman_ws'
+internal: '0.5, 70, 0.5'
+external: '5.5, 70, 5.5'
+
+# Leveling
+max-level: 30
+first-level-exp: 30
+exp-multiplayer: 1.7
+
+# Salary
+base-salary: 8
+level-boost: 0.5
+salary-wallet: 'dollars'
+
+# Permission boosts
+permissions-boosts:
+- 'group.businessman;1.05'
+- 'group.millionaire;1.1'
+- 'group.billionaire;1.15'
+- 'group.president;1.2'
+
+# Material boosts
+material-boosts:
+  salmon: 1.1
+  pufferfish: 1.3
+
+# Blocks regenerate task
+use-child-task: false
+
+# Replacement, default task period and
+# custom task periods section has been
+# removed because they are useless here

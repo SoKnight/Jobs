@@ -1,0 +1,108 @@
+# Frequent errors
+error-no-args: "&cRequired arguments are not specified. Use '/jobs help' for help."
+error-wrong-syntax: "&cWrong command syntax. Use '/jobs help' for help."
+error-command-not-found: "&cUnknown command. Use '/jobs help' for help."
+error-only-for-players: "&cThis command only for players."
+error-no-permission: "&cNot enough permissions."
+error-arg-is-not-int: "&cArgument %arg% must be integer."
+error-player-not-found: "&cPlayer %name% not found."
+error-unknown-job: "&cUnknown job '%job%'. Specify 'miner', 'woodcutter', 'hunter', 'fisherman' or 'farmer'."
+error-dont-work: "&cYou don't work here."
+error-is-not-init: "&cThis job is not initialized, check plugins/Jobs/jobs/%file% configuration."
+
+# Joining to job
+join-failed-already: "&cYou already joined to %job%."
+join-failed-max: "&cYou already joined to max jobs count."
+joined: "&fSuccessfully joined to &b%job%&f."
+
+# Leaving from job
+leave-failed: "&cYou is not joined to %job%."
+leaved: "&fYou leave from &b%job%&f."
+
+# Blocks editing
+edit-start-failed: "&cYou already edit any job. Use '/jobs finish' to finish."
+edit-started: "&fNow you edit blocks list for job &b%job%&f.\n&fUse &bright mouse button &fto link and &bleft &fto unlink block."
+edit-finish-failed: "&cYou don't edit any job now."
+edit-finished: "&fBlocks editing for job &b%job% &fhas been finished."
+edit-add-failed: "&cThis block already linked with job %job%."
+edit-added: "&fBlock at &b(%x% %y% %z%) &fnow linked with job &b%job%&f."
+edit-remove-failed: "&cThis block is not linked with job %job%."
+edit-removed: "&fBlock at &b(%x% %y% %z%) &fno longer linked with job &b%job%&f."
+
+# Blocktypes editing
+blocktype-added: "&fBlock type &b%material% &fmark as breakable for job &b%job%&f."
+blocktype-add-failed: "&cBlock type %material% can be breaked already for job %job%."
+blocktype-removed: "&fBlock type &b%material% &fmark as unbreakable for job &b%job%&f."
+blocktype-remove-failed: "&cBlock type %material% hasn't been marked as breakable for job %job%."
+blocktype-unknown-material: "&cUnknown material '%material%' use tab-completions in game chat."
+
+# List with job blocktypes
+listtypes-not-found: "&cJob %job% has not breakable blocks types."
+listtypes-page-is-empty: "&cPage %page% is empty."
+listtypes-header: "   &7Blocktypes [%page%/%max_page%]"
+listtypes-body: " &b%material%"
+listtypes-footer: " "
+
+# List with job blocks
+listblocks-not-found: "&cJob %job% has not custom breakable blocks."
+listblocks-page-is-empty: "&cPage %page% is empty."
+listblocks-header: "   &7Blocks [%page%/%max_page%]"
+listblocks-body: " &b%x% %y% %z%"
+listblocks-footer: " "
+
+# Workers list
+list-header: "   &7Workers [%total%]"
+list-body: " &b%job% &fhas &b%workers% &fworkers"
+list-footer: " "
+
+# Info about job
+info-header: "   &7Info about your job"
+info-footer: " "
+info-body:
+- ' &fJob: &b%name%'
+- ' &fWorker: &b%worker%'
+- ' &fJob workers: &b%workers%'
+- ' &fLevel: &b%level% &7(%exp%/%needed%)'
+- ' &fBonus: &b%bonus%'
+
+# Working
+work-done-failed: "&cYou are not working yet."
+work-doned: "&fYou finish your work on job &b%job%&f."
+work-start-failed: "&cYou are already working. Use '/jobs done' to finish."
+work-started: "&fYou start your work on job &b%job%&f."
+
+# Misc messages
+reload-success: "&fJobs reloaded."
+salary-message: "&eEarned %money%$"
+levelup-title: "&e&lLevel up!"
+levelup-message: "&fYour level increased to %level%"
+
+# General help messages
+help-header: "   &7Help for Jobs"
+help-footer: " "
+help-body: " &b/jobs %command% &f&l- &f%description%"
+
+# Descriptions for help messages
+help-descriptions:
+  help: 'Display this page'
+  edit: 'Start blocks edit session'
+  finish: 'Finish blocks edit session'
+  join: 'Join to job'
+  leave: 'Leave from job'
+  info: 'View info about job'
+  list: 'View list of jobs with workers count'
+  listtypes: 'View list of blocktypes'
+  listblocks: 'View list of blocks'
+  addblocktype: 'Allows blocktype for job'
+  remblocktype: 'Denies blocktype for job'
+  reload: 'Reload configurations'
+  start: 'Move to workspace and start work'
+  done: 'Finish work and leave from workspace'
+
+# Nodes for help messages
+# Will be used after subcommands if needed
+help-nodes:
+  job: '<job>'
+  name: '<name>'
+  material: '<material>'
+  page: '(page)'

@@ -1,0 +1,43 @@
+name: ${project.name}
+main: ru.soknight.jobs.Jobs
+author: SoKnight
+version: ${project.version}
+api-version: 1.15
+depend: [WorldGuard, WorldEdit, PEconomy]
+commands:
+  jobs:
+    description: Main plugin command
+    usage: /jobs <args>
+permissions:
+  jobs.help:
+    default: true
+  jobs.join:
+    default: true
+  jobs.leave:
+    default: true
+  jobs.info:
+    default: true
+  jobs.info.other:
+    default: op
+    children:
+      jobs.info: true
+  jobs.list.workers:
+    default: true
+  jobs.list.types:
+    default: op
+  jobs.list.blocks:
+    default: op
+  jobs.work.start:
+    default: true
+  jobs.work.done:
+    default: true
+  jobs.selection.edit:
+    default: op
+  jobs.selection.finish:
+    default: op
+  jobs.blocktypes.add:
+    default: op
+  jobs.blocktypes.remove:
+    default: op
+  jobs.reload:
+    default: op

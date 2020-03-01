@@ -1,0 +1,108 @@
+# Частые ошибки
+error-no-args: "&cНе указана кодманда. Используйте '/jobs help' для помощи."
+error-wrong-syntax: "&cНеверный синтаксис команды. Используйте '/jobs help' для помощи."
+error-command-not-found: "&cНеизвестная команда. Используйте '/jobs help' для помощи."
+error-only-for-players: "&cЭта команда доступна только игрокам."
+error-no-permission: "&cНедостаточно прав."
+error-arg-is-not-int: "&cАргумент '%arg%' должен быть числом."
+error-player-not-found: "&cИгрок '%name%' не был на сервере."
+error-unknown-job: "&cНеизвестная работа '%job%'. Укажите 'miner', 'woodcutter', 'hunter', 'fisherman' или 'farmer'."
+error-dont-work: "&cВы не работаете здесь."
+error-is-not-init: "&cЭта работа не инициализирована, проверьте её конфигурацию в: plugins/Jobs/jobs/%file%"
+
+# Устройство на работу
+join-failed-already: "&cВы уже работаете на %job%."
+join-failed-max: "&cВы уже имеете максимальное кол-во работ."
+joined: "&fТеперь &b%job% &f- ваша новая работа."
+
+# Увольнение с работы
+leave-failed: "&cВы не работаете %job%."
+leaved: "&fВы уволились с работы &b%job%&f."
+
+# Редактирование блоков
+edit-start-failed: "&cВы уже редактируете какую-то работу. Используйте '/jobs finish' для завершения."
+edit-started: "&fТеперь вы редактируете блоки для работы &b%job%&f.\n&fИспользуйте &bПКМ&f, чтобы привязать, и &bЛКМ&f, чтобы отвязать блок."
+edit-finish-failed: "&cСейчас вы не редактируете какую-либо работу."
+edit-finished: "&fРедактирование блоков для работы &b%job% &fзавершено."
+edit-add-failed: "&cДанный блок уже привязан к %job%."
+edit-added: "&fБлок на &b(%x% %y% %z%) &fтеперь привязан к работе &b%job%&f."
+edit-remove-failed: "&cДанный блок не привязан к работе %job%."
+edit-removed: "&fБлок на &b(%x% %y% %z%) &fбольше не привязан к работе &b%job%&f."
+
+# Редактирование типов блоков
+blocktype-added: "&fТип блока &b%material% &fпомечен как разрушаемый для &b%job%&f."
+blocktype-add-failed: "&cТип блока %material% уже может быть разрушен на работе %job%."
+blocktype-removed: "&fТип блока &b%material% &fубран из списка разрушаемых для &b%job%&f."
+blocktype-remove-failed: "&cТип блока %material% не был помечен как неразрушаемый для %job%."
+blocktype-unknown-material: "&cНеизвестный материал '%material%'. Попробуйте использовать подстановки в игровом чате."
+
+# Список разрушаемых типов блоков
+listtypes-not-found: "&cСписок разрушаемых типов блоков для %job% сейчас пуст."
+listtypes-page-is-empty: "&cСтраница %page% пуста."
+listtypes-header: "   &7Разрушаемые типы блоков [%page%/%max_page%]"
+listtypes-body: " &b%material%"
+listtypes-footer: " "
+
+# Список разрушаемых блоков
+listblocks-not-found: "&cСписок разрушаемых блоков для %job% сейчас пуст."
+listblocks-page-is-empty: "&cСтраница %page% пуста."
+listblocks-header: "   &7Разрушаемые блоки [%page%/%max_page%]"
+listblocks-body: " &b%x% %y% %z%"
+listblocks-footer: " "
+
+# Список рабочих
+list-header: "   &7Работники [%total%]"
+list-body: " &b%job% &fимеет &b%workers% &fрабочих"
+list-footer: " "
+
+# Информация о работе
+info-header: "   &7Информация о работе"
+info-footer: " "
+info-body:
+- ' &fРабота: &b%name%'
+- ' &fРабочий: &b%worker%'
+- ' &fКол-во рабочих: &b%workers%'
+- ' &fУровень: &b%level% &7(%exp%/%needed%)'
+- ' &fБонус: &b%bonus%'
+
+# Работа
+work-done-failed: "&cСейчас вы не работаете."
+work-doned: "&fВы завершили работу на &b%job%&f."
+work-start-failed: "&cВы уже работаете где-то. Используйте '/jobs done' для завершения."
+work-started: "&fВы начали работу на &b%job%&f."
+
+# Различные сообщения
+reload-success: "&fJobs перезагружен."
+salary-message: "&eЗаработано %money%$"
+levelup-title: "&e&lLevel up!"
+levelup-message: "&fВаш уровень увеличен до %level%"
+
+# Форматирование списка помощи
+help-header: "   &7Помощь для Jobs"
+help-footer: " "
+help-body: " &b/jobs %command% &f&l- &f%description%"
+
+# Описание для команд в списке помощи
+help-descriptions:
+  help: 'Показать эту страницу'
+  edit: 'Начать сессию редактирования блоков'
+  finish: 'Завершить сессию редактирования блоков'
+  join: 'Устроиться на работу'
+  leave: 'Уволиться с работы'
+  info: 'Показать информацию о работе'
+  list: 'Показать работы с кол-вом рабочих'
+  listtypes: 'Показать разрушаемые типы блоков'
+  listblocks: 'Показать разрушаемые блоки'
+  addblocktype: 'Разрешить ломать тип блока'
+  remblocktype: 'Запретить ломать тип блока'
+  reload: 'Перезагрузить конфигурацию'
+  start: 'Начать работу в рабочей области'
+  done: 'Завершить текущую работу'
+
+# Узлы для списка помощи
+# Будут использованы после под-команды при необходимости
+help-nodes:
+  job: '<работа>'
+  name: '<игрок>'
+  material: '<материал>'
+  page: '(стр)'
