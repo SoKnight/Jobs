@@ -222,7 +222,7 @@ public class JobConfig {
 	 */
 	
 	public float getLevelSalary(int level) {
-		return baseSalary + (levelBoost * ((float) level - 1));
+		return baseSalary + levelBoost * ((float) level - 1);
 	}
 	
 	public float getFinalSalary(Player player, int level, float boost) {
@@ -272,7 +272,7 @@ public class JobConfig {
 	}
 
 	public float getBoost(Player player) {
-		float boost = 0;
+		float boost = 1.0f;
 		for(String p : permissionsBoosts.keySet())
 			if(player.hasPermission(p)) {
 				float pboost = permissionsBoosts.get(p);

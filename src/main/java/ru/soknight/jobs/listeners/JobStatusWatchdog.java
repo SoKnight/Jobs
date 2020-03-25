@@ -82,7 +82,7 @@ public class JobStatusWatchdog implements Listener {
 		String name = p.getName();
 		
 		boolean fixWorkspaceLeaving = Config.getConfig().getBoolean("fix-workspace-leaving", true);
-		if(fixWorkspaceLeaving && e.getCause().equals(TeleportCause.UNKNOWN)) return;
+		if(!fixWorkspaceLeaving || e.getCause().equals(TeleportCause.UNKNOWN)) return;
 		
 		WorkerProfile worker = dbm.getProfile(name);
 		if(worker == null) return;
@@ -111,7 +111,5 @@ public class JobStatusWatchdog implements Listener {
 		String jname = config.getName();
 		p.sendMessage(Messages.formatMessage("work-doned", "%job%", jname));
 	}
-	
-	
 	
 }
