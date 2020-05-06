@@ -1,8 +1,7 @@
 # Jobs
 Just another custom jobs plugin, written from nothing.
 
-See config in config.yml file and messages in messages.yml file.
-Plugin use Paper API for MC 1.14.4 (you can use spigot).
+Plugin is compatible with Spigot 1.13+.
 See [wiki](https://github.com/SoKnight/Jobs/wiki) for more information.
 
 ## Features
