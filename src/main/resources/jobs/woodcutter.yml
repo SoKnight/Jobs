@@ -1,7 +1,6 @@
 # Example Woodcutter job configuration by SoKnight
-# See wiki on github page for additional information
 #
-# See available materials here in 'enum constants summary' header:
+# See available materials here in 'enum constants summary' section:
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 #
 # See additional info about every option in Miner configuration (miner.yml)
@@ -21,7 +20,7 @@ exp-multiplayer: 1.7
 # Salary
 base-salary: 9
 level-boost: 0.5
-salary-wallet: 'dollars'
+salary-currency: 'dollars'
 
 # Permission boosts
 permissions-boosts:
@@ -31,7 +30,7 @@ permissions-boosts:
 - 'group.president;1.2'
 
 # Material boosts
-material-boosts:
+materials-boosts:
   oak_log: 1.2
   birch_log: 1.2
   dark_oak_log: 1.2
@@ -44,3 +43,11 @@ default-task-period: 5
 
 # Custom task periods section has been
 # removed because it is useless here
+
+# Allowed blocks types
+use-blocktypes: true
+blocktypes:
+- 'oak_log'
+- 'birch_log'
+- 'dark_oak_log'
+- 'acacia_log'

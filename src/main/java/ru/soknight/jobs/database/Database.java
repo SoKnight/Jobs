@@ -3,41 +3,37 @@ package ru.soknight.jobs.database;
 import java.io.File;
 import java.sql.SQLException;
 
-import org.bukkit.configuration.file.FileConfiguration;
-
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import ru.soknight.jobs.Jobs;
-import ru.soknight.jobs.files.Config;
-import ru.soknight.jobs.utils.Logger;
+import ru.soknight.jobs.configuration.Config;
+import ru.soknight.jobs.database.profile.EmployeeProfile;
+import ru.soknight.jobs.database.profile.PlayerProfile;
+import ru.soknight.jobs.database.workspace.WorkspaceLinkedBlock;
 
 public class Database {
 
-	private String url;
-	private String host;
-	private String name;
-	private String user;
-	private String password;
-	private String file;
-	private boolean useMySQL;
-	private int port;
+	private final String url;
+	private final boolean useSQLite;
 	
-	public Database() throws Exception {
-		FileConfiguration config = Config.getConfig();
-		useMySQL= config.getBoolean("database.use-mysql", false);
-		if(useMySQL) {
-			host = config.getString("database.host", "localhost");
-			name = config.getString("database.name", "jobs");
-			user = config.getString("database.user", "admin");
-			password = config.getString("database.password", "jobs");
-			port = config.getInt("database.port", 3306);
-			url = "jdbc:mysql://" + host + ":" + port + "/" + name;
+	private	String user;
+	private String password;
+	
+	public Database(Jobs plugin, Config config) throws Exception {
+		this.useSQLite = config.getBoolean("database.use-sqlite", true);
+		if(!useSQLite) {
+			String host = config.getString("database.host", "localhost");
+			String name = config.getString("database.name", "jobs");
+			int port = config.getInt("database.port", 3306);
+			this.user = config.getString("database.user", "admin");
+			this.password = config.getString("database.password", "jobs");
+			this.url = "jdbc:mysql://" + host + ":" + port + "/" + name;
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} else {
-			file = config.getString("database.file", "jobs.db");
-			url = "jdbc:sqlite:" + Jobs.getInstance().getDataFolder() + File.separator + file;
+			String file = config.getString("database.file", "database.db");
+			this.url = "jdbc:sqlite:" + plugin.getDataFolder().getPath() + File.separator + file;
 			Class.forName("org.sqlite.JDBC").newInstance();
 		}
 		
@@ -47,19 +43,18 @@ public class Database {
 				
 		ConnectionSource source = getConnection();
 
-		TableUtils.createTableIfNotExists(source, WorkspaceBlock.class);
-		TableUtils.createTableIfNotExists(source, WorkspaceBlocktype.class);
+		TableUtils.createTableIfNotExists(source, PlayerProfile.class);
+		TableUtils.createTableIfNotExists(source, EmployeeProfile.class);
 		
-		TableUtils.createTableIfNotExists(source, JobProfile.class);
-		TableUtils.createTableIfNotExists(source, WorkerProfile.class);
+		TableUtils.createTableIfNotExists(source, WorkspaceLinkedBlock.class);
 		
 		source.close();
 		
-		Logger.info("Database type " + (!useMySQL ? "SQLite" : "MySQL") + " connected!");
+		plugin.getLogger().info("Database type " + (useSQLite ? "SQLite" : "MySQL") + " connected!");
 	}
 	
 	public ConnectionSource getConnection() throws SQLException {
-		return useMySQL ? new JdbcConnectionSource(url, user, password) : new JdbcConnectionSource(url);
+		return useSQLite ? new JdbcConnectionSource(url) : new JdbcConnectionSource(url, user, password);
 	}
 	
 }

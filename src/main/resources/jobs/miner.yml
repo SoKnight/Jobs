@@ -1,6 +1,6 @@
 # Example Miner job configuration by SoKnight
 #
-# See available materials here in 'enum constants summary' header:
+# See available materials here in 'enum constants summary' section:
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 
 # Displayname of job, will be used in chat messages
@@ -68,7 +68,7 @@ level-boost: 0.5
 # [!] Plugin use PEconomy for salary giving
 # * Data type: string (wallet enum)
 # * Default value: 'dollars'
-salary-wallet: 'dollars'
+salary-currency: 'dollars'
 
 # Custom salary boosts per permissions
 # Specify permission, symbol ';' and boost as float or integer
@@ -84,7 +84,7 @@ permissions-boosts:
 # Specify material, symbol ';' and boost as float or integer
 # If you want disable this feature, just remove this section fully
 # * Data type: <material enum>: <float or integer>
-material-boosts:
+materials-boosts:
   cobblestone: 1.1
   coal_ore: 1.3
   iron_ore: 1.5
@@ -124,3 +124,17 @@ custom-task-periods:
   gold_ore: 30
   diamond_ore: 40
   emerald_ore: 45
+
+# Should to use blocks types whitelist (see below) for this job or not
+# If you specify 'false' value, plugin just won't to check the type of destroyed block
+use-blocktypes: true
+
+# You can specify blocks types which can be destroyed by employees
+# Just add new material type entry into the list below
+# See available materials in link, specified in file header
+blocktypes:
+- 'coal_ore'
+- 'iron_ore'
+- 'gold_ore'
+- 'diamond_ore'
+- 'emerald_ore'
