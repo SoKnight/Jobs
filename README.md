@@ -16,6 +16,7 @@ See [wiki](https://github.com/SoKnight/Jobs/wiki) for more information.
 - Using SQLite and MySQL (second not tested) database for workers profiles storage.
 
 ## Requirements
+- [SKLibrary](https://github.com/SoKnight/SKLibrary)
+- [PEconomy](https://github.com/SoKnight/PEconomy)
 - WorldGuard plugin + WorldEdit for him
-- PEconomy (my plugin, search in my repositories)
 - PlaceholdersAPI (soft-depend, if you want use placeholders from plugin)
